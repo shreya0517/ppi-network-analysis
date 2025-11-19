@@ -1,44 +1,44 @@
-Protein–Protein Interaction (PPI) Network Analysis Using Graph Centrality
+# ppi-network-analysis
+Protein–Protein Interaction (PPI) Network Analysis
+Using Graph Centrality Algorithms in Python
 
-This project analyzes a Protein–Protein Interaction (PPI) network using graph-based centrality algorithms. The goal is to identify hub proteins, understand interaction patterns, and evaluate protein importance within biological networks.
+This project analyzes Protein–Protein Interaction (PPI) networks using graph-based centrality algorithms. The goal is to identify hub proteins, understand interaction patterns, and explore the structure of biological networks using computational methods.
 
+Overview
 
-Project Overview
+PPI networks help reveal how proteins collaborate within a biological system.
+Using NetworkX, this project computes several centrality measures:
 
-The script constructs a PPI-like network (synthetic or using a real dataset) and computes the following centrality measures:
+Degree Centrality — identifies highly connected proteins
 
-Degree Centrality
+Betweenness Centrality — finds proteins acting as bridges
 
-Betweenness Centrality
+Closeness Centrality — measures how quickly a protein can reach others
 
-Closeness Centrality
+Eigenvector Centrality — detects influential proteins
 
-Eigenvector Centrality
+PageRank — evaluates global importance
 
-PageRank
-
-These metrics help identify influential or biologically important proteins, typically involved in essential pathways or regulatory processes.
-
+The script works with both synthetic PPI-like networks and real datasets.
 
 How to Run the Project
-1. Synthetic Network (demo mode)
+1. Install dependencies
+pip install -r requirements.txt
 
-Generates a scale-free graph resembling real PPI networks.
-
+2. Run with a synthetic network
 python src/ppi_centrality_project.py --synthetic --out output
 
-2. Using a Real Dataset
+3. Run using a real dataset
 
 Place your file inside the data/ folder, then run:
 
-python src/ppi_centrality_project.py --input data/your_file.tsv --sep "\t"
+python src/ppi_centrality_project.py --input data/yourfile.tsv --sep "\t"
 
-
-Outputs Generated
+Output
 
 All results are saved in the output/ directory:
 
-centralities.csv – centrality scores for each protein
+centralities.csv — ranked centrality scores
 
 degree_distribution.png
 
@@ -48,18 +48,9 @@ degree_vs_betweenness.png
 
 network_visualization.png
 
-These outputs provide a clear view of node importance and overall network structure.
+These outputs help visualize the network and identify key proteins.
 
-
-
-Requirements
-
-Install all dependencies:
-
-pip install -r requirements.txt
-
-
-Project Structure
+📁 Project Structure
 ppi-network-analysis/
 │
 ├── src/
@@ -69,17 +60,12 @@ ppi-network-analysis/
 ├── README.md
 └── requirements.txt
 
+ Applications
 
-Key Applications
+Identifying hub or essential proteins
 
-This analysis can support research in:
+Understanding biological pathways
 
-Biological network modeling
+Systems biology research
 
-Hub protein identification
-
-Drug target prediction
-
-Systems biology
-
-Graph-based data mining
+Network modeling and graph theory analysis
